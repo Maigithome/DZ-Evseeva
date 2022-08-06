@@ -3,11 +3,11 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-double a, b;
+int a, b;
         Console.Write("Введите первое число: ");
-        a = Double.Parse(Console.ReadLine());
+        a = Convert.ToInt32(Console.ReadLine());
         Console.Write("Введите второе число: ");
-        b = Double.Parse(Console.ReadLine());
+        b = Convert.ToInt32(Console.ReadLine());
         if (a > b)
             Console.WriteLine("{0} - максимальное значение, {1} - минимальное значение", a, b);
         else Console.WriteLine("{0} - максимальное значение, {1} - минимальное значение", b, a);
