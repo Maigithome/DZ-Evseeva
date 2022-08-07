@@ -7,3 +7,4 @@ Console.Write("Введите число: ");
 string inputNumber = Console.ReadLine();
 Console.WriteLine($"Третья цифра числа {inputNumber[2]}");
 
+if (inputNumber / 100 < 1) Console.WriteLine("Третьей цифры нет");
