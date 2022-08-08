@@ -4,7 +4,11 @@
 // 32679 -> 6
 
 Console.Write("Введите число: ");
-string inputNumber = Console.ReadLine();
-Console.WriteLine($"Третья цифра числа {inputNumber[2]}");
+string inputNumber = Convert.ToInt32(Console.ReadLine());
 
-if (inputNumber / 100 < 1) Console.WriteLine("Третьей цифры нет");
+double digit  = (inputNumber / 100);
+
+if (digit < 1) Console.WriteLine("Третьей цифры нет");
+
+else Console.WriteLine($"Третья цифра числа {inputNumber[2]}");
+
