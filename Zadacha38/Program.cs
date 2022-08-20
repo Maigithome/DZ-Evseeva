@@ -21,4 +21,4 @@ for (int j = 0; j < arraySize; j++)
     if (array[j] > max) max = array[j];
     if (array[j] < min) min = array[j];
 }
-Console.WriteLine($"Максимальное чило {max}, минимальное число {min}, разница {max-min}");
+Console.WriteLine($"Максимальное число {max}, минимальное число {min}, разница {max-min}");
