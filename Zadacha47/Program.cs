@@ -11,9 +11,9 @@ int columns = Convert.ToInt32(Console.ReadLine());
 double[,] GetArray(int m, int n)
 {
     double[,] matrix = new double[m, n];
-    for (int i = 0; i < matrix.GetLength(0); i++)//строчки
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)// столбцы
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
             matrix[i, j] = new Random().NextDouble() * 10;
 
@@ -26,11 +26,11 @@ double[,] resultMatrix = GetArray(rows, columns);
 PrintArray(resultMatrix);
 void PrintArray(double[,] inputMatrix)
 {
-    for (int i = 0; i < inputMatrix.GetLength(0); i++) // строчки
+    for (int i = 0; i < inputMatrix.GetLength(0); i++) 
     {
-        for (int m = 0; m < inputMatrix.GetLength(1); m++) // столбцы
+        for (int m = 0; m < inputMatrix.GetLength(1); m++) 
         {
-            Console.Write(Math.Round(inputMatrix[i, m], 2) + "\t"); //"\t" - Tab
+            Console.Write(Math.Round(inputMatrix[i, m], 2) + "\t");
         }
         Console.WriteLine();
     }
