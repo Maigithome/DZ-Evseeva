@@ -5,40 +5,81 @@
 // 10 9 8 7
 
 
-int n = 4;
-int[,] sqareMatrix = new int[n, n];
+// int n = 4;
+// int[,] sqareMatrix = new int[n, n];
 
-int temp = 1;
-int i = 0;
-int j = 0;
+// int temp = 1;
+// int i = 0;
+// int j = 0;
 
-while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+// while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+// {
+//   sqareMatrix[i, j] = temp;
+//   temp++;
+//   if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+//     j++;
+//   else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+//     i++;
+//   else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+//     j--;
+//   else
+//     i--;
+// }
+
+// WriteArray(sqareMatrix);
+
+// void WriteArray (int[,] array)
+// {
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       if (array[i,j] / 10 <= 0)
+//       Console.Write($" {array[i,j]} ");
+
+//       else Console.Write($"{array[i,j]} ");
+//     }
+//     Console.WriteLine();
+//   }
+// }
+
+
+int N = 4;
+int[,] arr = new int[N, N];
+int num = 1;
+
+for (int delta = 0; delta < N - 2; delta++)
 {
-  sqareMatrix[i, j] = temp;
-  temp++;
-  if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
-    j++;
-  else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
-    i++;
-  else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
-    j--;
-  else
-    i--;
+    for (int i = 0 + delta; i < N - delta; i++)
+    {
+        arr[0 + delta, i] = num;
+        num++;
+    }
+    num--;
+    for (int i = 0 + delta; i < N - delta; i++)
+    {
+        arr[i, N - 1 - delta] = num;
+        num++;
+    }
+    num--;
+    for (int i = N - 1 - delta; i >= 0 + delta; i--)
+    {
+        arr[N - 1 - delta, i] = num;
+        num++;
+    }
+    num--;
+    for (int i = N - 1 - delta; i >= 1 + delta; i--)
+    {
+        arr[i, 0 + delta] = num;
+        num++;
+    }
+    
 }
 
-WriteArray(sqareMatrix);
 
-void WriteArray (int[,] array)
+for (int i = 0; i < N; i++)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      if (array[i,j] / 10 <= 0)
-      Console.Write($" {array[i,j]} ");
-
-      else Console.Write($"{array[i,j]} ");
-    }
+    for (int j = 0; j < N; j++)
+        Console.Write(arr[i, j] + "\t  ");
     Console.WriteLine();
-  }
 }
